@@ -1,0 +1,214 @@
+//********************************************************************
+// Media Query Shortcuts
+//********************************************************************
+
+// To be used as @media @bs-media-[xs/sm/md/ls]
+
+@bs-media-xs: ~"only screen and (max-width:767px)";
+
+@bs-media-sm-and-above: ~"only screen and (min-width:768px)";
+@bs-media-sm: ~"only screen and (min-width:768px) and (max-width:991px)";
+@bs-media-sm-and-below: ~"only screen and (max-width:991px)";
+
+@bs-media-md-and-above: ~"only screen and (min-width:992px)";
+@bs-media-md: ~"only screen and (min-width:992px) and (max-width:1199px)";
+@bs-media-md-and-below: ~"only screen and (max-width:1199px)";
+
+@bs-media-lg: ~"only screen and (min-width:1200px)";
+
+//********************************************************************
+// Scaffold
+//********************************************************************
+
+// Scaffolding
+@padding-xlarge-vertical: 10px;
+@padding-xlarge-horizontal: 16px;
+@border-radius-xlarge: 0px;
+@line-height-xlarge: 1.33;
+
+// Typography
+@font-size-xlarge: ceil(@font-size-base * 2);
+
+// Extra Large Button
+.btn-xlarge {
+  .button-size(@padding-xlarge-vertical; @padding-xlarge-horizontal; @font-size-xlarge; @line-height-xlarge; @border-radius-xlarge)
+}
+
+//********************************************************************
+// FTE Panels
+//********************************************************************
+  // Addressing closed and unresolved Bootstrap v3 issues #9892 and #14288
+  .panel-title.h1 {font-size: @font-size-h1;}
+  .panel-title.h2 {font-size: @font-size-h2;}
+  .panel-title.h3 {font-size: @font-size-h3;}
+  .panel-title.h4 {font-size: @font-size-h4;}
+  .panel-title.h5 {font-size: @font-size-h5;}
+  .panel-title.h6 {font-size: @font-size-h6;}
+//********************************************************************
+
+// Bootstrap Clearfix
+// Apply only to parent container of consistent, even spaced columns
+
+.bs-columns-clearfix {
+  /*  Tablet  */
+  @media @bs-media-sm {
+
+    /* Column clear fix */
+    .col-lg-1:nth-child(12n+1),
+    .col-lg-2:nth-child(6n+1),
+    .col-lg-3:nth-child(4n+1),
+    .col-lg-4:nth-child(3n+1),
+    .col-lg-6:nth-child(2n+1),
+    .col-md-1:nth-child(12n+1),
+    .col-md-2:nth-child(6n+1),
+    .col-md-3:nth-child(4n+1),
+    .col-md-4:nth-child(3n+1),
+    .col-md-6:nth-child(2n+1){
+      clear: none;
+    }
+    .col-sm-1:nth-child(12n+1),
+    .col-sm-2:nth-child(6n+1),
+    .col-sm-3:nth-child(4n+1),
+    .col-sm-4:nth-child(3n+1),
+    .col-sm-6:nth-child(2n+1){
+      clear: left;
+    }
+  }
+
+
+  /*  Medium Desktop  */
+  @media @bs-media-md {
+
+    /* Column clear fix */
+    .col-lg-1:nth-child(12n+1),
+    .col-lg-2:nth-child(6n+1),
+    .col-lg-3:nth-child(4n+1),
+    .col-lg-4:nth-child(3n+1),
+    .col-lg-6:nth-child(2n+1),
+    .col-sm-1:nth-child(12n+1),
+    .col-sm-2:nth-child(6n+1),
+    .col-sm-3:nth-child(4n+1),
+    .col-sm-4:nth-child(3n+1),
+    .col-sm-6:nth-child(2n+1){
+      clear: none;
+    }
+    .col-md-1:nth-child(12n+1),
+    .col-md-2:nth-child(6n+1),
+    .col-md-3:nth-child(4n+1),
+    .col-md-4:nth-child(3n+1),
+    .col-md-6:nth-child(2n+1){
+      clear: left;
+    }
+  }
+
+
+  /*  Large Desktop  */
+  @media @bs-media-lg {
+
+    /* Column clear fix */
+    .col-md-1:nth-child(12n+1),
+    .col-md-2:nth-child(6n+1),
+    .col-md-3:nth-child(4n+1),
+    .col-md-4:nth-child(3n+1),
+    .col-md-6:nth-child(2n+1),
+    .col-sm-1:nth-child(12n+1),
+    .col-sm-2:nth-child(6n+1),
+    .col-sm-3:nth-child(4n+1),
+    .col-sm-4:nth-child(3n+1),
+    .col-sm-6:nth-child(2n+1){
+      clear: none;
+    }
+    .col-lg-1:nth-child(12n+1),
+    .col-lg-2:nth-child(6n+1),
+    .col-lg-3:nth-child(4n+1),
+    .col-lg-4:nth-child(3n+1),
+    .col-lg-6:nth-child(2n+1){
+      clear: left;
+    }
+  }
+}
+
+//********************************************************************
+// Smart Utility CLasses
+//********************************************************************
+
+// Subtle box shadow inspired by Google
+@base-box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+.box-shadow {
+  -moz-box-shadow: @base-box-shadow;
+  -webkit-box-shadow: @base-box-shadow;
+  box-shadow: @base-box-shadow;
+}
+
+@media @bs-media-xs {
+  .h1-xs {.h1}
+  .h2-xs {.h2}
+  .h3-xs {.h3}
+  .h4-xs {.h4}
+  .h5-xs {.h5}
+  .h6-xs {.h6}
+}
+@media @bs-media-sm {
+  .h1-sm {.h1}
+  .h2-sm {.h2}
+  .h3-sm {.h3}
+  .h4-sm {.h4}
+  .h5-sm {.h5}
+  .h6-sm {.h6}
+}
+@media @bs-media-md {
+  .h1-md {.h1}
+  .h2-md {.h2}
+  .h3-md {.h3}
+  .h4-md {.h4}
+  .h5-md {.h5}
+  .h6-md {.h6}
+}
+@media @bs-media-lg {
+  .h1-lg {.h1}
+  .h2-lg {.h2}
+  .h3-lg {.h3}
+  .h4-lg {.h4}
+  .h5-lg {.h5}
+  .h6-lg {.h6}
+}
+
+.hero-title {
+  margin-bottom: 30px;
+  @media @bs-media-md-and-above {
+    font-size: 60px;
+  }
+}
+
+.text-center-xs {
+  @media @bs-media-xs {
+    .text-center;
+  }
+}
+
+.center-block-xs {
+  @media @bs-media-xs {
+    .center-block;
+  }
+}
+
+// ATTENTION - Is this really a good idea?
+.text-white {
+  color: #fff !important;
+}
+
+.section {
+  overflow: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-center {
+  float:none;
+  text-align:center;
+  > li {
+    float: none;
+    display: inline-block;
+  }
+}
+
